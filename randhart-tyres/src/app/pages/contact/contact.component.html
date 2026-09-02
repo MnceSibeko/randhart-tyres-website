@@ -1,0 +1,98 @@
+<section class="rh-page-hero">
+  <div class="rh-container">
+    <p class="rh-eyebrow">Contact Us</p>
+    <h1>Tell us what's wrong with the car</h1>
+    <p class="rh-page-hero__lead">
+      Call, message, or send the form — we usually reply within the hour
+      during workshop hours.
+    </p>
+  </div>
+  <div class="rh-tread"></div>
+</section>
+
+<section class="rh-section">
+  <div class="rh-container rh-contact-grid">
+
+    <div class="rh-contact-info">
+      <div class="rh-info-card">
+        <h3>Visit the yard</h3>
+        <p>14 Bok Street<br>Randhart, Alberton, 1449</p>
+      </div>
+      <div class="rh-info-card">
+        <h3>Call or WhatsApp</h3>
+        <p><a href="tel:+27110000000">011 000 0000</a><br><a href="tel:+27820000000">082 000 0000</a></p>
+      </div>
+      <div class="rh-info-card">
+        <h3>Email</h3>
+        <p><a href="mailto:info@randhart-tyres.co.za">info&#64;randhart-tyres.co.za</a></p>
+      </div>
+      <div class="rh-info-card">
+        <h3>Hours</h3>
+        <p>Mon–Fri: 07:30 – 17:30<br>Saturday: 08:00 – 13:00<br>Sunday: Closed</p>
+      </div>
+    </div>
+
+    <form class="rh-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <h2>Send a message</h2>
+
+      @if (submitted()) {
+        <div class="rh-form__success" role="status">
+          Thanks — we've got your message and will call you back shortly.
+        </div>
+      }
+
+      <div class="rh-field">
+        <label for="name">Full name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Your name" />
+        @if (f.name.invalid && f.name.touched) {
+          <span class="rh-field__error">Please enter your name.</span>
+        }
+      </div>
+
+      <div class="rh-field-row">
+        <div class="rh-field">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" formControlName="phone" placeholder="082 000 0000" />
+          @if (f.phone.invalid && f.phone.touched) {
+            <span class="rh-field__error">A valid phone number is needed.</span>
+          }
+        </div>
+
+        <div class="rh-field">
+          <label for="email">Email (optional)</label>
+          <input id="email" type="email" formControlName="email" placeholder="you&#64;email.com" />
+          @if (f.email.invalid && f.email.touched) {
+            <span class="rh-field__error">That email doesn't look right.</span>
+          }
+        </div>
+      </div>
+
+      <div class="rh-field">
+        <label for="reason">Reason for contact</label>
+        <select id="reason" formControlName="reason">
+          @for (r of reasons; track r) {
+            <option [value]="r">{{ r }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="rh-field">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" formControlName="message" placeholder="Tell us the vehicle and what's going on"></textarea>
+        @if (f.message.invalid && f.message.touched) {
+          <span class="rh-field__error">Let us know what you need.</span>
+        }
+      </div>
+
+      <button type="submit" class="rh-btn rh-btn--primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<section class="rh-map">
+  <div class="rh-container">
+    <div class="rh-map__frame" role="img" aria-label="Map placeholder showing Randhart Tyres location in Alberton">
+      <span>14 Bok Street, Randhart, Alberton — map embed goes here</span>
+    </div>
+  </div>
+</section>

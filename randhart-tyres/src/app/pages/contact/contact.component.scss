@@ -1,0 +1,100 @@
+:host { display: block; }
+
+.rh-page-hero {
+  background: var(--rh-ink);
+  color: var(--rh-white);
+  padding: 60px 24px 42px;
+}
+.rh-page-hero h1 { color: var(--rh-white); font-size: clamp(2rem, 4vw, 2.6rem); max-width: 20ch; }
+.rh-page-hero__lead { color: rgba(255, 255, 255, 0.65); max-width: 56ch; }
+
+.rh-section { padding: 64px 0; }
+
+.rh-contact-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.rh-contact-info {
+  display: grid;
+  gap: 16px;
+}
+.rh-info-card {
+  background: var(--rh-white);
+  border: 1px solid var(--rh-line);
+  border-left: 3px solid var(--rh-red);
+  padding: 18px 20px;
+}
+.rh-info-card h3 { font-size: 0.95rem; margin-bottom: 6px; }
+.rh-info-card p { font-size: 0.92rem; color: var(--rh-gray); margin: 0; }
+.rh-info-card a { color: var(--rh-ink); font-weight: 500; }
+.rh-info-card a:hover { color: var(--rh-red); }
+
+.rh-form {
+  background: var(--rh-white);
+  border: 1px solid var(--rh-line);
+  padding: 32px;
+}
+.rh-form h2 { font-size: 1.4rem; margin-bottom: 1em; }
+
+.rh-form__success {
+  background: #EFF6EE;
+  border: 1px solid #BFDDBB;
+  color: #29632A;
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+
+.rh-field { margin-bottom: 18px; display: flex; flex-direction: column; }
+.rh-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--rh-ink-soft);
+  margin-bottom: 6px;
+}
+input, select, textarea {
+  font-family: var(--rh-font-body);
+  font-size: 0.96rem;
+  padding: 11px 13px;
+  border: 1px solid var(--rh-line);
+  border-radius: var(--rh-radius);
+  background: var(--rh-paper);
+  color: var(--rh-ink);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--rh-red);
+}
+textarea { resize: vertical; }
+.rh-field__error {
+  color: var(--rh-red-dark);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.rh-map { padding-bottom: 76px; }
+.rh-map__frame {
+  height: 280px;
+  background: var(--rh-paper-dim);
+  border: 1px dashed var(--rh-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rh-gray);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .rh-contact-grid { grid-template-columns: 1fr; }
+  .rh-field-row { grid-template-columns: 1fr; }
+}
