@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Randhart Tyres — design tokens
+   Pulled from the logo: racing red, ink black, off-white, tread-line grays
+   ========================================================================== */
+:root {
+  --rh-red: #C1272D;
+  --rh-red-dark: #8F1D22;
+  --rh-ink: #191919;
+  --rh-ink-soft: #2B2B2B;
+  --rh-paper: #FAF8F5;
+  --rh-paper-dim: #F0EDE8;
+  --rh-gray: #6E6B67;
+  --rh-line: #E2DED7;
+  --rh-white: #FFFFFF;
+
+  --rh-font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --rh-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --rh-container: 1180px;
+  --rh-radius: 3px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--rh-font-body);
+  color: var(--rh-ink);
+  background: var(--rh-paper);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--rh-font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0 0 0.5em;
+  letter-spacing: 0.01em;
+  color: var(--rh-ink);
+}
+
+p { margin: 0 0 1em; max-width: 62ch; }
+
+a {
+  color: var(--rh-red);
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+.rh-container {
+  max-width: var(--rh-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.rh-eyebrow {
+  font-family: var(--rh-font-display);
+  font-size: 0.85rem;
+  color: var(--rh-red);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6em;
+}
+
+.rh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--rh-font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 13px 28px;
+  border-radius: var(--rh-radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.rh-btn--primary {
+  background: var(--rh-red);
+  color: var(--rh-white);
+}
+.rh-btn--primary:hover { background: var(--rh-red-dark); }
+
+.rh-btn--outline {
+  background: transparent;
+  border-color: var(--rh-ink);
+  color: var(--rh-ink);
+}
+.rh-btn--outline:hover { border-color: var(--rh-red); color: var(--rh-red); }
+
+.rh-btn--outline-light {
+  background: transparent;
+  border-color: rgba(255,255,255,0.55);
+  color: var(--rh-white);
+}
+.rh-btn--outline-light:hover { border-color: var(--rh-white); }
+
+/* tread-mark divider used sparingly as the signature device */
+.rh-tread {
+  height: 6px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    -35deg,
+    var(--rh-ink) 0 3px,
+    transparent 3px 14px
+  );
+  opacity: 0.85;
+}
+
+:focus-visible {
+  outline: 3px solid var(--rh-red);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
