@@ -1,0 +1,38 @@
+<section class="rh-page-hero">
+  <div class="rh-container">
+    <p class="rh-eyebrow">Services</p>
+    <h1>What happens in the bay</h1>
+    <p class="rh-page-hero__lead">
+      Six things we do properly, every time — from a single puncture to a
+      full fleet contract.
+    </p>
+  </div>
+  <div class="rh-tread"></div>
+</section>
+
+<section class="rh-section">
+  <div class="rh-container rh-services-list">
+    @for (s of services; track s.num) {
+      <article class="rh-service-row">
+        <span class="rh-service-row__num">{{ s.num }}</span>
+        <div>
+          <h2>{{ s.title }}</h2>
+          <p>{{ s.desc }}</p>
+          <ul>
+            @for (p of s.points; track p) {
+              <li>{{ p }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="rh-cta">
+  <div class="rh-container rh-cta__inner">
+    <h2>Not sure what your tyres need?</h2>
+    <p>Bring the car in — we'll check tread, pressure and alignment for free.</p>
+    <a routerLink="/contact" class="rh-btn rh-btn--primary">Book a Free Check</a>
+  </div>
+</section>
