@@ -1,0 +1,45 @@
+<section class="rh-page-hero">
+  <div class="rh-container">
+    <p class="rh-eyebrow">Tyre Brands</p>
+    <h1>Stock for every budget</h1>
+    <p class="rh-page-hero__lead">
+      We carry four tiers of tyre, and we'll tell you plainly which one
+      actually suits your car and your budget — not just the one with the
+      best margin.
+    </p>
+  </div>
+  <div class="rh-tread"></div>
+</section>
+
+<section class="rh-section">
+  <div class="rh-container rh-tiers">
+    @for (t of tiers; track t.name) {
+      <article class="rh-tier-card">
+        <div class="rh-tier-card__head">
+          <h2>{{ t.name }}</h2>
+          <span>{{ t.tag }}</span>
+        </div>
+        <p>{{ t.desc }}</p>
+        <ul>
+          @for (b of t.brands; track b) {
+            <li>{{ b }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="rh-section rh-section--dark">
+  <div class="rh-container rh-help">
+    <div>
+      <p class="rh-eyebrow">Not sure which tier?</p>
+      <h2>Tell us the car, we'll tell you the tyre</h2>
+      <p>
+        Send your registration or tyre size and we'll come back with two or
+        three options across price points — no obligation to buy.
+      </p>
+    </div>
+    <a routerLink="/contact" class="rh-btn rh-btn--primary">Ask for a Recommendation</a>
+  </div>
+</section>
