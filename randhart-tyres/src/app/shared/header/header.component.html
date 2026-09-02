@@ -1,0 +1,41 @@
+<header class="rh-topbar" [class.rh-topbar--scrolled]="scrolled()">
+  <div class="rh-topbar__info">
+    <div class="rh-container rh-topbar__info-inner">
+      <span>Mon–Fri 07:30–17:30 · Sat 08:00–13:00</span>
+      <a href="tel:+27110000000">011 000 0000</a>
+    </div>
+  </div>
+
+  <div class="rh-nav">
+    <div class="rh-container rh-nav__inner">
+      <a routerLink="/" class="rh-nav__brand" (click)="closeMenu()" aria-label="Randhart Tyres home">
+        <img src="assets/logo.png" alt="Randhart Tyres" height="52" />
+      </a>
+
+      <nav class="rh-nav__links" [class.rh-nav__links--open]="menuOpen()">
+        @for (link of links; track link.path) {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="rh-nav__link--active"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+            (click)="closeMenu()"
+          >{{ link.label }}</a>
+        }
+        <a routerLink="/contact" class="rh-btn rh-btn--primary rh-nav__cta" (click)="closeMenu()">
+          Get a Quote
+        </a>
+      </nav>
+
+      <button
+        type="button"
+        class="rh-nav__toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-label="Toggle menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="rh-tread"></div>
+</header>

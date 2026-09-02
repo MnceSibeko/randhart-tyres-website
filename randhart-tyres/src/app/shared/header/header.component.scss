@@ -1,0 +1,98 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.rh-topbar__info {
+  background: var(--rh-ink);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+}
+.rh-topbar__info-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 24px;
+}
+.rh-topbar__info-inner a {
+  color: var(--rh-white);
+  font-weight: 500;
+}
+
+.rh-nav {
+  background: var(--rh-white);
+  border-bottom: 1px solid var(--rh-line);
+}
+.rh-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+}
+
+.rh-nav__brand { display: flex; align-items: center; }
+
+.rh-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.rh-nav__links a:not(.rh-btn) {
+  font-family: var(--rh-font-display);
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--rh-ink);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+.rh-nav__links a:not(.rh-btn):hover { color: var(--rh-red); }
+.rh-nav__link--active:not(.rh-btn) {
+  color: var(--rh-red) !important;
+  border-bottom-color: var(--rh-red);
+}
+.rh-nav__cta { padding: 10px 20px; font-size: 0.92rem; }
+
+.rh-nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.rh-nav__toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--rh-ink);
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .rh-topbar__info-inner span { display: none; }
+
+  .rh-nav__toggle { display: flex; }
+
+  .rh-nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--rh-white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    border-bottom: 1px solid var(--rh-line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+  }
+  .rh-nav__links--open { max-height: 420px; }
+  .rh-nav__links a:not(.rh-btn) {
+    width: 100%;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--rh-line);
+  }
+  .rh-nav__cta { margin: 14px 24px; }
+}
