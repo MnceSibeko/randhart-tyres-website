@@ -1,0 +1,59 @@
+<section class="rh-page-hero">
+  <div class="rh-container">
+    <p class="rh-eyebrow">About Us</p>
+    <h1>Run by people who fix their own cars</h1>
+    <p class="rh-page-hero__lead">
+      Randhart Tyres started as a two-bay yard on the edge of Alberton and
+      grew because the work was done properly the first time.
+    </p>
+  </div>
+  <div class="rh-tread"></div>
+</section>
+
+<section class="rh-section">
+  <div class="rh-container rh-story">
+    <div class="rh-story__copy">
+      <p class="rh-eyebrow">Our story</p>
+      <h2>From one bay to four</h2>
+      <p>
+        Randhart Tyres opened its doors as a small fitment yard, taking on
+        the jobs bigger dealerships didn't want to deal with — one tyre,
+        one puncture, one honest opinion at a time.
+      </p>
+      <p>
+        Word travelled because the alignment held, the price matched the
+        quote, and nobody was sent home with tyres they didn't need. Four
+        bays and a full-time crew later, that's still the whole business
+        model.
+      </p>
+    </div>
+    <div class="rh-story__mark" aria-hidden="true">
+      <img src="assets/logo.png" alt="" />
+    </div>
+  </div>
+</section>
+
+<section class="rh-section rh-section--dim">
+  <div class="rh-container">
+    <div class="rh-section__head">
+      <p class="rh-eyebrow">What we stand for</p>
+      <h2>Four things we don't compromise on</h2>
+    </div>
+    <div class="rh-values-grid">
+      @for (v of values; track v.title) {
+        <article class="rh-value-card">
+          <h3>{{ v.title }}</h3>
+          <p>{{ v.desc }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="rh-cta">
+  <div class="rh-container rh-cta__inner">
+    <h2>Come and see the yard for yourself</h2>
+    <p>Walk-ins welcome — or book ahead so a bay is free when you arrive.</p>
+    <a routerLink="/contact" class="rh-btn rh-btn--primary">Get in Touch</a>
+  </div>
+</section>
