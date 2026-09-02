@@ -1,0 +1,78 @@
+<section class="rh-hero">
+  <div class="rh-container rh-hero__inner">
+    <div class="rh-hero__copy">
+      <p class="rh-eyebrow">Randhart Tyres · Alberton</p>
+      <h1>Tyres fitted right,<br>while you wait.</h1>
+      <p class="rh-hero__lead">
+        New and used tyres, wheel alignment and balancing from a workshop that
+        tells you what you actually need — not what's easiest to sell.
+      </p>
+      <div class="rh-hero__actions">
+        <a routerLink="/contact" class="rh-btn rh-btn--primary">Book a Bay</a>
+        <a routerLink="/services" class="rh-btn rh-btn--outline">See Our Services</a>
+      </div>
+    </div>
+    <div class="rh-hero__mark" aria-hidden="true">
+      <img src="assets/logo.png" alt="" />
+    </div>
+  </div>
+  <div class="rh-tread"></div>
+</section>
+
+<section class="rh-stats">
+  <div class="rh-container rh-stats__grid">
+    @for (s of stats; track s.label) {
+      <div class="rh-stats__item">
+        <span class="rh-stats__value">{{ s.value }}</span>
+        <span class="rh-stats__label">{{ s.label }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="rh-section">
+  <div class="rh-container">
+    <div class="rh-section__head">
+      <p class="rh-eyebrow">What we do</p>
+      <h2>Everything below the wheel arch</h2>
+    </div>
+    <div class="rh-services-grid">
+      @for (s of services; track s.title) {
+        <article class="rh-service-card">
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.desc }}</p>
+        </article>
+      }
+    </div>
+    <a routerLink="/services" class="rh-inline-link">View all services &rarr;</a>
+  </div>
+</section>
+
+<section class="rh-section rh-section--dark">
+  <div class="rh-container rh-why__grid">
+    <div>
+      <p class="rh-eyebrow">Why Randhart</p>
+      <h2>We keep it straightforward</h2>
+      <p>
+        No pressure to buy a full set when one tyre will do. No alignment
+        "top-ups" you didn't ask for. Just a clear diagnosis, a fair price,
+        and tyres that are on straight before you leave the yard.
+      </p>
+      <a routerLink="/about" class="rh-btn rh-btn--outline-light">More About Us</a>
+    </div>
+    <ul class="rh-why__list">
+      <li><strong>Honest diagnosis</strong> — we show you the wear pattern before we quote.</li>
+      <li><strong>Same-day fitment</strong> — most jobs done inside 30 minutes.</li>
+      <li><strong>Fair pricing</strong> — new and used options, no hidden extras.</li>
+      <li><strong>Local, accountable</strong> — same team, same yard, since day one.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rh-cta">
+  <div class="rh-container rh-cta__inner">
+    <h2>Need tyres before the weekend?</h2>
+    <p>Drop in or call ahead — we'll have a bay ready.</p>
+    <a routerLink="/contact" class="rh-btn rh-btn--primary">Get a Quote</a>
+  </div>
+</section>
