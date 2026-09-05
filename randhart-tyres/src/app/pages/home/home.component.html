@@ -19,14 +19,35 @@
   <div class="rh-tread"></div>
 </section>
 
-<section class="rh-stats">
-  <div class="rh-container rh-stats__grid">
-    @for (s of stats; track s.label) {
-      <div class="rh-stats__item">
-        <span class="rh-stats__value">{{ s.value }}</span>
-        <span class="rh-stats__label">{{ s.label }}</span>
+<section class="rh-reviews" aria-labelledby="reviews-heading">
+  <div class="rh-container">
+    <div class="rh-reviews__head">
+      <p class="rh-eyebrow">Customer reviews</p>
+      <h2 id="reviews-heading">What our customers have to say about us</h2>
+    </div>
+    <div class="rh-reviews__slider-wrap">
+      <div class="rh-reviews__slider" #slider>
+        @for (review of reviews; track review.service) {
+          <article class="rh-review-card">
+            <div class="rh-review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>{{ review.quote }}</blockquote>
+            <footer>
+              <strong>{{ review.customer }}</strong>
+              <span>{{ review.service }}</span>
+            </footer>
+          </article>
+        }
       </div>
-    }
+      <div class="rh-reviews__controls">
+        <button class="rh-slider-btn" (click)="onUserInteract(activeIndex - 1 < 0 ? pageCount - 1 : activeIndex - 1)" aria-label="Previous review">&#8592;</button>
+        <div class="rh-reviews__dots">
+          @for (_ of [].constructor(pageCount); track $index) {
+            <button class="rh-dot" [class.rh-dot--active]="$index === activeIndex" (click)="onUserInteract($index)" [attr.aria-label]="'Page ' + ($index + 1)"></button>
+          }
+        </div>
+        <button class="rh-slider-btn" (click)="onUserInteract(activeIndex + 1 >= pageCount ? 0 : activeIndex + 1)" aria-label="Next review">&#8594;</button>
+      </div>
+    </div>
   </div>
 </section>
 
