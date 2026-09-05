@@ -15,7 +15,7 @@ export class HeaderComponent {
   readonly links = [
     { path: '/', label: 'Home' },
     { path: '/services', label: 'Services' },
-    { path: '/brands', label: 'Tyre Brands' },
+    // { path: '/brands', label: 'Tyre Brands' },
     { path: '/about', label: 'About Us' },
     { path: '/contact', label: 'Contact Us' },
   ];
